@@ -36,10 +36,10 @@ namespace API
         {
             services.AddApplicationServices(_config);
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo {Title = "SnowBlaze1.API", Version = "v1"});
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "SnowBlaze1.API", Version = "v1"});
+            });
 
             services.AddControllers();
             services.AddCors();
