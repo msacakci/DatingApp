@@ -36,10 +36,10 @@ export class MemberDetailComponent implements OnInit {
     const imageUrls = [];
     for (const photo of this.member.photos)
     {
-      imageUrls.push({
+        imageUrls.push({
         small: photo?.url,
         medium: photo?.url,
-        big: photo.url
+        big: photo?.url
       })
     }
       
@@ -48,7 +48,7 @@ export class MemberDetailComponent implements OnInit {
 
   loadMember()
   {
-    this.memberService.getMember(this.route.snapshot.paramMap.get('username')).subscribe(member => {
+      this.memberService.getMember(this.route.snapshot.paramMap.get('username')).subscribe(member => {
       this.member = member;
       this.galleryImages = this.getImages();
     })
